@@ -1,0 +1,28 @@
+{
+    "name": "paymaster-contract",
+    "version": "1.0.0",
+    "description": "Gas abstraction paymaster for OP_NET",
+    "type": "module",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "compile": "npx opnet compile",
+        "verify": "npx opnet verify",
+        "lint": "eslint src/",
+        "format": "prettier --write src/"
+    },
+    "author": "Bob <captainjoshua74@gmail.com>",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "@btc-vision/plugin-sdk": "^1.0.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.39.0",
+        "@types/node": "^25.0.0",
+        "eslint": "^9.39.0",
+        "prettier": "^3.6.0",
+        "typescript": "^5.8.0",
+        "typescript-eslint": "^8.39.0",
+        "@btc-vision/cli": "^1.0.0"
+    }
+}

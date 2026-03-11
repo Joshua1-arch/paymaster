@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+*.jsc
+*.opnet
+.idea/
+.vscode/
+.DS_Store
+.env
+*.log
+coverage/

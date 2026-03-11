@@ -1,0 +1,67 @@
+{
+    "name": "paymaster-contract",
+    "version": "1.0.0",
+    "opnetVersion": ">=0.0.1",
+    "main": "dist/index.jsc",
+    "target": "bytenode",
+    "type": "plugin",
+    "author": {
+        "name": "Bob",
+        "email": "captainjoshua74@gmail.com"
+    },
+    "pluginType": "standalone",
+    "permissions": {
+        "database": {
+            "enabled": false,
+            "collections": []
+        },
+        "blocks": {
+            "preProcess": false,
+            "postProcess": false,
+            "onChange": false
+        },
+        "epochs": {
+            "onChange": false,
+            "onFinalized": false
+        },
+        "mempool": {
+            "txFeed": false,
+            "txSubmit": false
+        },
+        "api": {
+            "addEndpoints": false,
+            "addWebsocket": false
+        },
+        "threading": {
+            "maxWorkers": 1,
+            "maxMemoryMB": 256
+        },
+        "filesystem": {
+            "configDir": false,
+            "tempDir": false
+        }
+    },
+    "resources": {
+        "memory": {
+            "maxHeapMB": 256,
+            "maxOldGenMB": 128,
+            "maxYoungGenMB": 64
+        },
+        "cpu": {
+            "maxThreads": 2,
+            "priority": "normal"
+        },
+        "timeout": {
+            "initMs": 30000,
+            "hookMs": 5000,
+            "shutdownMs": 10000
+        }
+    },
+    "lifecycle": {
+        "loadPriority": 100,
+        "enabledByDefault": true,
+        "requiresRestart": false
+    },
+    "dependencies": {},
+    "description": "Gas abstraction paymaster for OP_NET"
+}
