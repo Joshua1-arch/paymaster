@@ -1,5 +1,4 @@
 import { PluginBase, IPluginContext } from '@btc-vision/plugin-sdk';
-import { Network, Transaction, crypto } from '@btc-vision/transaction';
 
 /**
  * PaymasterContract Plugin / Smart Contract Simulator
@@ -78,12 +77,12 @@ export default class PaymasterContract extends PluginBase {
         }
 
         // Re-imburse relayer gas fee
-        const relayerBal = this.balances.get(relayerAddress) || 0n;
+        const relayerBal = this.balances.get(relayerAddress) || BigInt(0);
         this.balances.set(relayerAddress, relayerBal + gasFee);
 
         // Distribute remaining claim to the user
         const netAmount = claimAmount - gasFee;
-        const userBal = this.balances.get(userAddress) || 0n;
+        const userBal = this.balances.get(userAddress) || BigInt(0);
         this.balances.set(userAddress, userBal + netAmount);
 
         // Increment nonce
